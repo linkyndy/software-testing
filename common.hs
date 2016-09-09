@@ -12,3 +12,7 @@ prime_numbers = 2 : filter is_prime [3..]
 
 reverse_number :: Integer -> Integer
 reverse_number = read . reverse . show
+
+numberToDigits :: Integer -> [Integer]
+numberToDigits 0 = []
+numberToDigits n = numberToDigits (n `div` 10) ++ [n `mod` 10]
