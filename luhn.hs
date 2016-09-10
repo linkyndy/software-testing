@@ -57,3 +57,4 @@ luhnTests = all luhn validLuhns && all (not . luhn) invalidLuhns
 
 -- *Luhn> quickCheck luhnTests
 -- +++ OK, passed 1 tests.
+-- (0.01 secs, 557,784 bytes)

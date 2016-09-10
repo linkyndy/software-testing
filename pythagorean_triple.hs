@@ -8,5 +8,6 @@ pythagoreanTriple = head [a * b * c | c <- [5..], b <- [4..(c-1)], a <- [3..(b-1
 
 -- *PythagoreanTriple> pythagoreanTriple
 -- 31875000
+-- (7.51 secs, 3,538,840,800 bytes)
 
--- the nubers are 200, 375 and 425
+-- the numbers are 200, 375 and 425

@@ -4,12 +4,13 @@ import Data.List
 import Test.QuickCheck
 import Common
 
-find_smallest_prime_from (first:rest) = if condition then sum_of_101_primes else find_smallest_prime_from rest
-  where next_100_primes = take 100 (filter (\n -> n > first) prime_numbers)
-        sum_of_101_primes = sum (first:next_100_primes)
-        condition = is_prime sum_of_101_primes
+findSmallestPrimeFrom (first:rest) = if condition then sumOf101Primes else findSmallestPrimeFrom rest
+  where next100Primes = take 100 (filter (\n -> n > first) primeNumbers)
+        sumOf101Primes = sum (first:next100Primes)
+        condition = isPrime sumOf101Primes
 
-smallest_prime = find_smallest_prime_from prime_numbers
+smallestPrime = findSmallestPrimeFrom primeNumbers
 
--- *SmallestPrime> smallest_prime
+-- *SmallestPrime> smallestPrime
 -- 37447
+-- (0.01 secs, 2,292,192 bytes)

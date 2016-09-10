@@ -4,13 +4,13 @@ import Data.List
 import Test.QuickCheck
 import Common
 
-permutations_number_for :: [Integer] -> Int
-permutations_number_for = length . permutations
+permutationsNumberFor :: [Integer] -> Int
+permutationsNumberFor = length . permutations
 
-expected_number_for :: [Integer] -> Int
-expected_number_for = factorial . length
+expectedNumberFor :: [Integer] -> Int
+expectedNumberFor = factorial . length
 
-number_of_permutations_test = \i -> permutations_number_for [0..i] == expected_number_for [0..i]
+numberOfPermutationsTest = \i -> permutationsNumberFor [0..i] == expectedNumberFor [0..i]
 
 -- The property is hard to test because as we increase the test iteration, it
 -- becomes harder and harder to compute permutations of lists having many elements

@@ -3,13 +3,13 @@ module PowersetCardinality where
 import Data.List
 import Test.QuickCheck
 
-powerset_cardinality_for :: [Integer] -> Int
-powerset_cardinality_for = length . subsequences
+powersetCardinalityFor :: [Integer] -> Int
+powersetCardinalityFor = length . subsequences
 
-expected_cardinality_for :: [Integer] -> Int
-expected_cardinality_for = (2^) . length
+expectedCardinalityFor :: [Integer] -> Int
+expectedCardinalityFor = (2^) . length
 
-powerset_cardinality_test = \i -> powerset_cardinality_for [0..i] == expected_cardinality_for [0..i]
+powersetCardinalityTest = \i -> powersetCardinalityFor [0..i] == expectedCardinalityFor [0..i]
 
 -- The property is hard to test because as we increase the test iteration, it
 -- becomes harder and harder to compute the powerset of lists having many elements

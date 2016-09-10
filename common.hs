@@ -3,15 +3,15 @@ module Common where
 factorial :: Int -> Int
 factorial n = foldl (*) 1 [1..n]
 
-is_prime :: Integer -> Bool
-is_prime n = n > 1 && all (\x -> rem n x /= 0) xs
-  where xs = takeWhile (\y -> y^2 <= n) prime_numbers
+isPrime :: Integer -> Bool
+isPrime n = n > 1 && all (\x -> rem n x /= 0) xs
+  where xs = takeWhile (\y -> y^2 <= n) primeNumbers
 
-prime_numbers :: [Integer]
-prime_numbers = 2 : filter is_prime [3..]
+primeNumbers :: [Integer]
+primeNumbers = 2 : filter isPrime [3..]
 
-reverse_number :: Integer -> Integer
-reverse_number = read . reverse . show
+reverseNumber :: Integer -> Integer
+reverseNumber = read . reverse . show
 
 numberToDigits :: Integer -> [Integer]
 numberToDigits 0 = []

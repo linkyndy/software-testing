@@ -4,7 +4,8 @@ import Data.List
 import Test.QuickCheck
 import Common
 
-consecutive_primes = takeWhile (\p -> is_prime(p + 1)) (scanl1 (*) prime_numbers)
+consecutivePrimes = takeWhile (\p -> isPrime(p + 1)) (scanl1 (*) primeNumbers)
 
--- *ConsecutivePrimes> consecutive_primes
+-- *ConsecutivePrimes> consecutivePrimes
 -- [2,6,30,210,2310]
+-- (0.01 secs, 234,064 bytes)

@@ -25,3 +25,10 @@ accusers x = filter (\b -> accuses b x) boys
 guilty, honest :: [Boy]
 guilty = filter (\b -> length (accusers b) == 3) boys
 honest = boys \\ guilty
+
+-- *CrimeSceneInvestigation> guilty
+-- [Jack]
+-- (0.01 secs, 85,912 bytes)
+-- *CrimeSceneInvestigation> honest
+-- [Matthew,Peter,Arnold,Carl]
+-- (0.00 secs, 105,432 bytes)
