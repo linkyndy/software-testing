@@ -2,8 +2,6 @@ module CheckRandomnessIntervals where
 
 import Data.List
 import System.Random
-import Test.QuickCheck
-import Test.QuickCheck.Monadic
 
 probs :: Int -> IO [Float]
 probs 0 = return []
