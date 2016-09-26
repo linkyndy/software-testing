@@ -10,3 +10,6 @@ distribute (Cnj fs) = Cnj (map distribute fs)
 distribute (Dsj [Cnj [p, q], r]) = Cnj [distribute (Dsj [p, r]), distribute (Dsj [q, r])]
 distribute (Dsj [p, Cnj [q, r]]) = Cnj [distribute (Dsj [p, q]), distribute (Dsj [p, r])]
 distribute f = f
+
+cnf :: Form -> Form
+cnf = distribute . nnf . arrowfree
