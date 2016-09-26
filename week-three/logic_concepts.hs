@@ -20,9 +20,6 @@ entailment f g = all (\v -> evl v (Impl f g)) (allVals (Impl f g))
 equivalence :: Form -> Form -> Bool
 equivalence f g = entailment f g && entailment g f
 
-p = Prop 1
-q = Prop 2
-
 validContradictions =
   [ Cnj [p, Neg p] -- p ∧ ¬p
   , Cnj [Dsj [p, q], Cnj [Neg p, Neg q]] -- (p ∨ q) ∧ (¬p ∧ ¬q)
