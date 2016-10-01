@@ -2,12 +2,16 @@ module Common where
 
 import Data.Function
 import Data.List
+import Data.Tuple
 
 infix 1 -->
 (-->) :: Bool -> Bool -> Bool
 p --> q = (not p) || q
 
 type Rel a = [(a, a)]
+
+inverseRelation :: Rel a -> Rel a
+inverseRelation r = map swap r
 
 infixr 5 @@
 (@@) :: Eq a => Rel a -> Rel a -> Rel a
