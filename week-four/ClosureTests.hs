@@ -7,14 +7,16 @@ import SymmetricClosure
 import TransitiveClosure
 
 -- Check whether all pairs from both the relation and its inverse are in the
--- generated symmetric closure
+-- generated symmetric closure (i.e. resulting relation is symmetric)
 prop_symmetric :: Rel Int -> Bool
-prop_symmetric r = and [elem p (symmetricClosure r) | p <- nub (r ++ (inverseRelation r))]
+prop_symmetric r = and [elem p closure | p <- nub (r ++ (inverseRelation r))]
+  where closure = symmetricClosure r
 
 -- Check that the generated symmetric closure has the same number of pairs as
 -- the number of unique pairs from both the relation and its inverse
 prop_cardinality :: Rel Int -> Bool
-prop_cardinality r = length (symmetricClosure r) == length (nub (r ++ (inverseRelation r)))
+prop_cardinality r = length closure == length (nub (r ++ (inverseRelation r)))
+  where closure = symmetricClosure r
 
 -- Check that pairs from the initial relation are present in the generated
 -- transitive closure
