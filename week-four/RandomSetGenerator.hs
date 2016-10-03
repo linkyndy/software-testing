@@ -15,6 +15,10 @@ generateSet = do
   set <- populateSet emptySet cardinality
   return (set)
 
+  -- *RandomSetGenerator> generateSet
+  -- {2,4,5,...,950,951,955,971,996}
+  -- (0.01 secs, 1,723,984 bytes)
+
 -- Receives an initial `s` set and populates it with `n` random items
 populateSet :: Set Int -> Int -> IO (Set Int)
 populateSet s 0 = do

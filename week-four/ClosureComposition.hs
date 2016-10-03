@@ -1,6 +1,7 @@
 module ClosureComposition where
 
 import Test.QuickCheck
+import Common
 import SymmetricClosure
 import TransitiveClosure
 
